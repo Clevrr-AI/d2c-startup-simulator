@@ -20,10 +20,20 @@ export interface GameState {
   }[];
 }
 
+export type PersonaType = 'chad' | 'molly' | 'opal' | 'karen' | 'vic' | 'clevrr';
+
+export interface Persona {
+  id: PersonaType;
+  name: string;
+  title: string;
+  style: string;
+}
+
 export interface Question {
   id: string;
   month: number;
   text: string;
+  persona: PersonaType;
   choices: {
     text: string;
     effects: Partial<GameMetrics>;

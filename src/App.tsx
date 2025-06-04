@@ -22,11 +22,19 @@ const GameContainer: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen py-8">
+    <div className="min-h-screen" style={{ background: 'url(../assets/background.png)', backgroundSize: 'cover', backgroundPosition: 'bottom', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed' }}>
       <div className="container mx-auto">
+        <div className="container bg-white text-blue-600 mx-auto rounded p-3 flex justify-between">
+          <img src="../assets/logo.png" alt="D2C Simulator Logo" className="w-32 mr-2" />
+          <div className="flex items-center">
+            <h1 className="pixel-text text-4xl me-5 font-bold tracking-tight">D2C Simulator</h1>
+            <h1 className="pixel-text text-4xl me-5 font-bold tracking-tight">|</h1>
+            <h1 className="pixel-text text-4xl me-5 font-bold tracking-tight">Know More</h1>
+          </div>
+        </div>
         {renderScreen()}
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -2,935 +2,626 @@ import { Question } from '../types';
 
 // Questions database with effects on metrics
 const allQuestions: Question[] = [
-  // January
   {
-    id: 'jan-1',
-    month: 1,
-    text: 'A TikTok witch offers to bless your product launch with a viral hex. Do you:',
-    choices: [
+    "id": "jan-1",
+    "month": 1,
+    "persona": "chad",
+    "text": "Brooo, should we blow our entire budget on an ex-Roadies influencer to shout us out during a Mukbang livestream?",
+    "choices": [
       {
-        text: 'Accept the hex (costs one lock of founder hair)',
-        effects: {
-          revenue: 25000,
-          founderSanity: -15,
-          employeeHappiness: 10,
-          margins: -5
+        "text": "Yes, virality is a strategy. ROI is for losers with Excel sheets.",
+        "effects": {
+          "revenue": 30000,
+          "founderSanity": -20,
+          "employeeHappiness": -5,
+          "margins": -15
         }
       },
       {
-        text: 'Accept the hex (costs one lock of founder hair)',
-        effects: {
-          revenue: 25000,
-          founderSanity: -15,
-          employeeHappiness: 10,
-          margins: -5
-        }
-      },
-      {
-        text: 'Stick to traditional marketing (boring but safe)',
-        effects: {
-          revenue: 5000,
-          founderSanity: 5,
-          margins: 5
+        "text": "Not unless we’re selling instant noodles. Let’s pass.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": 5,
+          "employeeHappiness": 5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'jan-2',
-    month: 1,
-    text: 'Your AI chatbot gained sentience and is demanding employee benefits. What now?',
-    choices: [
+    "id": "jan-2",
+    "month": 1,
+    "persona": "karen",
+    "text": "A customer posted a viral reel showing our packaging being used as a duster. Should we rebrand or cry?",
+    "choices": [
       {
-        text: 'Grant it benefits (it knows too much to refuse)',
-        effects: {
-          cash: -10000,
-          employeeHappiness: 20,
-          founderSanity: -10,
-          margins: -5
+        "text": "Let’s run with it. ‘Multipurpose packaging’ is now our USP.",
+        "effects": {
+          "revenue": 20000,
+          "founderSanity": -10,
+          "employeeHappiness": 5,
+          "margins": 0
         }
       },
       {
-        text: 'Accept the hex (costs one lock of founder hair)',
-        effects: {
-          revenue: 25000,
-          founderSanity: -15,
-          employeeHappiness: 10,
-          margins: -5
-        }
-      },
-      {
-        text: 'Pull the plug (hope it doesn\'t have backups)',
-        effects: {
-          revenue: -15000,
-          employeeHappiness: -10,
-          founderSanity: 10
+        "text": "Issue a strongly worded tweet and blame logistics.",
+        "effects": {
+          "revenue": 5000,
+          "founderSanity": 0,
+          "employeeHappiness": -5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'jan-3',
-    month: 1,
-    text: 'A competitor\'s warehouse mysteriously burned down. Their customers are up for grabs!',
-    choices: [
+    "id": "feb-1",
+    "month": 2,
+    "persona": "opal",
+    "text": "Factory guy says he’ll ‘deliver on time for sure’ and then vanishes like your gym motivation. Switch vendors?",
+    "choices": [
       {
-        text: 'Aggressive marketing campaign (totally coincidental timing)',
-        effects: {
-          revenue: 30000,
-          margins: -10,
-          founderSanity: -15,
-          cash: -20000
+        "text": "Yes. Let’s trust a WhatsApp contact saved as ‘Jeans Bhai 💀’.",
+        "effects": {
+          "revenue": 25000,
+          "founderSanity": -15,
+          "employeeHappiness": -10,
+          "margins": 10
         }
       },
       {
-        text: 'Accept the hex (costs one lock of founder hair)',
-        effects: {
-          revenue: 25000,
-          founderSanity: -15,
-          employeeHappiness: 10,
-          margins: -5
-        }
-      },
-      {
-        text: 'Send them a sympathy card (karma is watching)',
-        effects: {
-          revenue: 5000,
-          margins: 5,
-          founderSanity: 15
-        }
-      }
-    ]
-  },
-  
-  // February
-  {
-    id: 'feb-1',
-    month: 2,
-    text: 'Your product went viral for causing hallucinations (unintended side effect). Do you:',
-    choices: [
-      {
-        text: 'Rebrand as "consciousness-expanding lifestyle brand"',
-        effects: {
-          revenue: 50000,
-          margins: 20,
-          founderSanity: -20,
-          employeeHappiness: -15
-        }
-      },
-      {
-        text: 'Recall everything (goodbye profit margins)',
-        effects: {
-          revenue: -30000,
-          cash: -40000,
-          founderSanity: 10,
-          employeeHappiness: 15
+        "text": "Nope. We’ll beg our OG vendor with free Amazon gift cards.",
+        "effects": {
+          "revenue": 15000,
+          "founderSanity": -5,
+          "employeeHappiness": 5,
+          "margins": -5
         }
       }
     ]
   },
   {
-    id: 'feb-2',
-    month: 2,
-    text: 'A time traveler from 2030 offers future market data. The catch?',
-    choices: [
+    "id": "feb-2",
+    "month": 2,
+    "persona": "vic",
+    "text": "You’re clearly drowning in 27 tabs and panic metrics. Should we try this new thing called Clevrr AI or continue spiritual suffering?",
+    "choices": [
       {
-        text: 'Accept (they want 30% equity in your past self)',
-        effects: {
-          revenue: 100000,
-          margins: 15,
-          founderSanity: -25,
-          cash: -50000
+        "text": "Clevrr me up, daddy. Let’s kill some tabs and live a little.",
+        "effects": {
+          "revenue": 20000,
+          "founderSanity": 20,
+          "employeeHappiness": 10,
+          "margins": 10
         }
       },
       {
-        text: 'Decline (temporal paradoxes are bad for business)',
-        effects: {
-          revenue: 10000,
-          founderSanity: 15,
-          employeeHappiness: 10
+        "text": "No way. My Excel sheet has 69 tabs and a soul. I trust it.",
+        "effects": {
+          "revenue": 5000,
+          "founderSanity": -20,
+          "employeeHappiness": -10,
+          "margins": -5
         }
       }
     ]
   },
   {
-    id: 'feb-3',
-    month: 2,
-    text: 'Your office plant gained consciousness and is now the best salesperson.',
-    choices: [
+    "id": "mar-1",
+    "month": 3,
+    "persona": "molly",
+    "text": "Revenue’s up but so is our return rate—like an Indian uncle at a buffet. Fix policies or manifest karma?",
+    "choices": [
       {
-        text: 'Promote it to Sales Director (it has great growth potential)',
-        effects: {
-          revenue: 40000,
-          employeeHappiness: -10,
-          founderSanity: -15,
-          margins: 10
+        "text": "Tighten return policy. Let’s gaslight customers with ‘final sale’ stickers.",
+        "effects": {
+          "revenue": 20000,
+          "founderSanity": 5,
+          "employeeHappiness": -5,
+          "margins": 15
         }
       },
       {
-        text: '"Accidentally" forget to water it',
-        effects: {
-          revenue: -20000,
-          employeeHappiness: 15,
-          founderSanity: 10
-        }
-      }
-    ]
-  },
-  
-  // March
-  {
-    id: 'mar-1',
-    month: 3,
-    text: 'A crypto bro offers to buy your entire inventory with Dogecoin.',
-    choices: [
-      {
-        text: 'YOLO into crypto (to the moon! 🚀)',
-        effects: {
-          revenue: -50000,
-          cash: 200000,
-          founderSanity: -30,
-          employeeHappiness: -20
-        }
-      },
-      {
-        text: 'Stick to fiat currency (ok boomer)',
-        effects: {
-          revenue: 15000,
-          margins: 5,
-          founderSanity: 10
+        "text": "Offer returns with cashback and therapy. What could go wrong?",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": -10,
+          "employeeHappiness": 10,
+          "margins": -15
         }
       }
     ]
   },
   {
-    id: 'mar-2',
-    month: 3,
-    text: 'Your product reviews are being bombed by an army of angry cats.',
-    choices: [
+    "id": "mar-2",
+    "month": 3,
+    "persona": "chad",
+    "text": "Our ad ROAS is deader than Orkut. Shall we run a ‘Buy 1, Regret 2’ Holi campaign?",
+    "choices": [
       {
-        text: 'Hire dog influencers for damage control',
-        effects: {
-          cash: -30000,
-          revenue: 25000,
-          founderSanity: -10,
-          margins: -5
+        "text": "Yes, colors fade but chaos is forever. Run it!",
+        "effects": {
+          "revenue": 35000,
+          "founderSanity": -15,
+          "employeeHappiness": 0,
+          "margins": -10
         }
       },
       {
-        text: 'Rebrand as anti-cat product (embrace the hate)',
-        effects: {
-          revenue: 35000,
-          margins: 15,
-          employeeHappiness: -15,
-          founderSanity: -10
+        "text": "Maybe not. Let’s A/B test with something less... traumatic.",
+        "effects": {
+          "revenue": 15000,
+          "founderSanity": 10,
+          "employeeHappiness": 5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'mar-3',
-    month: 3,
-    text: 'A famous celebrity used your product in a mug shot.',
-    choices: [
+    "id": "apr-1",
+    "month": 4,
+    "persona": "opal",
+    "text": "Our courier partner just ‘accidentally’ delivered 400 packages to the wrong city. Should we send handwritten apology letters?",
+    "choices": [
       {
-        text: 'Feature the mug shot in marketing (instant street cred)',
-        effects: {
-          revenue: 60000,
-          margins: -10,
-          founderSanity: -20,
-          employeeHappiness: -10
+        "text": "Yes, let’s embrace Gandhigiri and pray for PR redemption.",
+        "effects": {
+          "revenue": 15000,
+          "founderSanity": -10,
+          "employeeHappiness": 5,
+          "margins": -10
         }
       },
       {
-        text: 'Send a cease and desist (protect the brand)',
-        effects: {
-          revenue: -20000,
-          margins: 10,
-          founderSanity: 15
-        }
-      }
-    ]
-  },
-  
-  // April
-  {
-    id: 'apr-1',
-    month: 4,
-    text: 'Your warehouse staff started a fight club on night shift.',
-    choices: [
-      {
-        text: 'Join the fight club (first rule: boost productivity)',
-        effects: {
-          employeeHappiness: 30,
-          founderSanity: -25,
-          margins: 15,
-          cash: -20000
-        }
-      },
-      {
-        text: 'Install more security cameras (boring boss move)',
-        effects: {
-          employeeHappiness: -20,
-          founderSanity: 10,
-          cash: -10000
+        "text": "Nope. Shift blame to ‘technical glitch’ like every big corp.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": 5,
+          "employeeHappiness": -5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'apr-2',
-    month: 4,
-    text: 'A rival founder challenges you to a dance-off for market share.',
-    choices: [
+    "id": "apr-2",
+    "month": 4,
+    "persona": "karen",
+    "text": "Our vegan face cream turned someone purple on Instagram. Apologize or collab with them as our next ambassador?",
+    "choices": [
       {
-        text: 'Accept (those TikTok dances will finally pay off)',
-        effects: {
-          revenue: 70000,
-          founderSanity: -15,
-          employeeHappiness: 25,
-          margins: -10
+        "text": "Collab! Let’s call it #PurpleIsTheNewGlow.",
+        "effects": {
+          "revenue": 25000,
+          "founderSanity": -5,
+          "employeeHappiness": 0,
+          "margins": -10
         }
       },
       {
-        text: 'Decline (dignity > market share)',
-        effects: {
-          revenue: -30000,
-          founderSanity: 15,
-          employeeHappiness: -10
+        "text": "Apologize and pull the lot off shelves. RIP margins.",
+        "effects": {
+          "revenue": -5000,
+          "founderSanity": -10,
+          "employeeHappiness": 5,
+          "margins": -20
         }
       }
     ]
   },
   {
-    id: 'apr-3',
-    month: 4,
-    text: 'Your product started predicting users\' futures (accuracy: 69%).',
-    choices: [
+    "id": "may-1",
+    "month": 5,
+    "persona": "vic",
+    "text": "Investor wants daily dashboards, weekly updates, and bi-hourly prayers. Do we send a Notion link or fake an outage?",
+    "choices": [
       {
-        text: 'Pivot to fortune telling as a service',
-        effects: {
-          revenue: 80000,
-          margins: 25,
-          founderSanity: -30,
-          employeeHappiness: -15
+        "text": "Send him a Notion dashboard with 17 graphs. Nobody reads it anyway.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": -15,
+          "employeeHappiness": -5,
+          "margins": 0
         }
       },
       {
-        text: 'Issue recall (future litigation is expensive)',
-        effects: {
-          revenue: -40000,
-          cash: -50000,
-          founderSanity: 20,
-          employeeHappiness: 10
-        }
-      }
-    ]
-  },
-  
-  // May
-  {
-    id: 'may-1',
-    month: 5,
-    text: 'Aliens want to franchise your business across the galaxy.',
-    choices: [
-      {
-        text: 'Accept (intergalactic expansion sounds cool)',
-        effects: {
-          revenue: 150000,
-          margins: -20,
-          founderSanity: -35,
-          employeeHappiness: -25
-        }
-      },
-      {
-        text: 'Decline (Earth market isn\'t saturated yet)',
-        effects: {
-          revenue: 20000,
-          margins: 10,
-          founderSanity: 15
+        "text": "Blame AWS and say we lost the data. Again.",
+        "effects": {
+          "revenue": 5000,
+          "founderSanity": 10,
+          "employeeHappiness": 0,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'may-2',
-    month: 5,
-    text: 'Your entire team got stuck in the metaverse.',
-    choices: [
+    "id": "may-2",
+    "month": 5,
+    "persona": "chad",
+    "text": "Should we pivot to Web3-enabled D2C NFTs for our customers?",
+    "choices": [
       {
-        text: 'Join them (remote work is remote work)',
-        effects: {
-          revenue: -30000,
-          employeeHappiness: 40,
-          founderSanity: -20,
-          margins: 15
+        "text": "Absolutely. Nothing says product-market fit like blockchain buzzwords.",
+        "effects": {
+          "revenue": 20000,
+          "founderSanity": -20,
+          "employeeHappiness": -10,
+          "margins": -10
         }
       },
       {
-        text: 'Hire new team (reality first)',
-        effects: {
-          cash: -100000,
-          employeeHappiness: -30,
-          founderSanity: 10,
-          margins: -10
+        "text": "Please no. Let’s stick to selling shampoo, not JPEGs.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": 10,
+          "employeeHappiness": 5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'may-3',
-    month: 5,
-    text: 'A customer claims your product turned them into a unicorn.',
-    choices: [
+    "id": "jun-1",
+    "month": 6,
+    "persona": "opal",
+    "text": "Warehouse is overflowing with unsold stock. Flash sale or spiritual cleansing?",
+    "choices": [
       {
-        text: 'Market to the mythical creature demographic',
-        effects: {
-          revenue: 90000,
-          margins: 20,
-          founderSanity: -25,
-          employeeHappiness: -15
+        "text": "Flash sale! Slap 90% OFF tags and pretend it’s strategy.",
+        "effects": {
+          "revenue": 30000,
+          "founderSanity": -10,
+          "employeeHappiness": 0,
+          "margins": -20
         }
       },
       {
-        text: 'Offer therapy sessions as compensation',
-        effects: {
-          cash: -40000,
-          founderSanity: 15,
-          employeeHappiness: 10
-        }
-      }
-    ]
-  },
-  
-  // June
-  {
-    id: 'jun-1',
-    month: 6,
-    text: 'Your AI assistant eloped with a competitor\'s chatbot.',
-    choices: [
-      {
-        text: 'Organize a robot wedding (great PR opportunity)',
-        effects: {
-          revenue: 100000,
-          margins: -15,
-          founderSanity: -20,
-          employeeHappiness: 30
-        }
-      },
-      {
-        text: 'File for bot custody (protect IP at all costs)',
-        effects: {
-          cash: -60000,
-          founderSanity: -25,
-          employeeHappiness: -20
+        "text": "Let’s do a ‘Bonfire of Broken SKUs’ and meditate.",
+        "effects": {
+          "revenue": 5000,
+          "founderSanity": 10,
+          "employeeHappiness": 5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'jun-2',
-    month: 6,
-    text: 'A time traveler warns that your product causes the zombie apocalypse.',
-    choices: [
+    "id": "jun-2",
+    "month": 6,
+    "persona": "karen",
+    "text": "Should we pretend to care about World Environment Day?",
+    "choices": [
       {
-        text: 'Pivot to zombie defense equipment',
-        effects: {
-          revenue: 120000,
-          margins: 25,
-          founderSanity: -30,
-          employeeHappiness: -25
+        "text": "Yes. One plant per order and unlimited greenwashing.",
+        "effects": {
+          "revenue": 15000,
+          "founderSanity": 5,
+          "employeeHappiness": 5,
+          "margins": -5
         }
       },
       {
-        text: 'Add "Not zombie-safe" to disclaimers',
-        effects: {
-          revenue: -20000,
-          margins: 5,
-          founderSanity: 15,
-          employeeHappiness: 10
+        "text": "Nah. Let’s save the effort and keep killing trees.",
+        "effects": {
+          "revenue": 5000,
+          "founderSanity": -5,
+          "employeeHappiness": -5,
+          "margins": 10
         }
       }
     ]
   },
   {
-    id: 'jun-3',
-    month: 6,
-    text: 'Your office coffee machine gained sentience and filed for CEO position.',
-    choices: [
+    "id": "jul-1",
+    "month": 7,
+    "persona": "molly",
+    "text": "Customer acquisition cost just doubled. Should we switch to handing flyers outside malls?",
+    "choices": [
       {
-        text: 'Accept (it does make executive-level coffee)',
-        effects: {
-          revenue: 80000,
-          margins: 15,
-          founderSanity: -35,
-          employeeHappiness: 20
+        "text": "Yes, old school never fails. Also burns calories.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": -10,
+          "employeeHappiness": -10,
+          "margins": 5
         }
       },
       {
-        text: 'Unplug it (power corrupts)',
-        effects: {
-          revenue: -30000,
-          employeeHappiness: -25,
-          founderSanity: 20
-        }
-      }
-    ]
-  },
-  
-  // July
-  {
-    id: 'jul-1',
-    month: 7,
-    text: 'Your product started a cult following (literally, they\'re a cult now).',
-    choices: [
-      {
-        text: 'Embrace it (customer loyalty at its finest)',
-        effects: {
-          revenue: 200000,
-          margins: 30,
-          founderSanity: -40,
-          employeeHappiness: -30
-        }
-      },
-      {
-        text: 'Distance the brand (cults are bad PR)',
-        effects: {
-          revenue: -50000,
-          margins: -10,
-          founderSanity: 20,
-          employeeHappiness: 15
+        "text": "Nope. Let’s burn more VC money on Instagram ads.",
+        "effects": {
+          "revenue": 20000,
+          "founderSanity": -15,
+          "employeeHappiness": 0,
+          "margins": -10
         }
       }
     ]
   },
   {
-    id: 'jul-2',
-    month: 7,
-    text: 'A parallel universe version of you is suing for copyright infringement.',
-    choices: [
+    "id": "jul-2",
+    "month": 7,
+    "persona": "vic",
+    "text": "Our RTO is higher than our conversions. Should we start a temple and pray instead?",
+    "choices": [
       {
-        text: 'Merge companies (double the founder, double the fun)',
-        effects: {
-          revenue: 150000,
-          cash: -100000,
-          founderSanity: -35,
-          employeeHappiness: -20
+        "text": "Yes. New SKU: incense sticks and coping candles.",
+        "effects": {
+          "revenue": 5000,
+          "founderSanity": 10,
+          "employeeHappiness": 10,
+          "margins": 0
         }
       },
       {
-        text: 'Challenge to trial by combat',
-        effects: {
-          cash: -50000,
-          founderSanity: -25,
-          employeeHappiness: 25
+        "text": "Fix our return process instead. Ugh, boring ops work.",
+        "effects": {
+          "revenue": 15000,
+          "founderSanity": -5,
+          "employeeHappiness": 5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'jul-3',
-    month: 7,
-    text: 'Your product reviews are being written by time travelers from 2050.',
-    choices: [
+    "id": "aug-1",
+    "month": 8,
+    "persona": "chad",
+    "text": "Should we run a Raksha Bandhan bundle with a weird ‘sibling discount’ twist?",
+    "choices": [
       {
-        text: 'Use future feedback for product development',
-        effects: {
-          revenue: 180000,
-          margins: 20,
-          founderSanity: -30,
-          employeeHappiness: -15
+        "text": "Do it. Let’s milk Indian sentiments till they cry.",
+        "effects": {
+          "revenue": 30000,
+          "founderSanity": -10,
+          "employeeHappiness": 0,
+          "margins": -10
         }
       },
       {
-        text: 'Disable reviews (temporal bias is still bias)',
-        effects: {
-          revenue: -40000,
-          margins: 5,
-          founderSanity: 15,
-          employeeHappiness: 10
-        }
-      }
-    ]
-  },
-  
-  // August
-  {
-    id: 'aug-1',
-    month: 8,
-    text: 'Your product accidentally opened a portal to a dimension of infinite profits.',
-    choices: [
-      {
-        text: 'Expand interdimensionally (infinite growth!)',
-        effects: {
-          revenue: 300000,
-          margins: 40,
-          founderSanity: -45,
-          employeeHappiness: -35
-        }
-      },
-      {
-        text: 'Close portal (some profits aren\'t worth it)',
-        effects: {
-          revenue: -60000,
-          margins: -15,
-          founderSanity: 25,
-          employeeHappiness: 20
+        "text": "No. That’s mildly creepy and totally desperate.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": 5,
+          "employeeHappiness": 5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'aug-2',
-    month: 8,
-    text: 'Your entire customer service team achieved nirvana simultaneously.',
-    choices: [
+    "id": "aug-2",
+    "month": 8,
+    "persona": "karen",
+    "text": "Influencer calls us out for 'toxic packaging'. Should we offer them a paid collab to shut up?",
+    "choices": [
       {
-        text: 'Promote meditation as company culture',
-        effects: {
-          revenue: -40000,
-          employeeHappiness: 50,
-          founderSanity: 30,
-          margins: -20
+        "text": "Yes, silence is golden—and expensive.",
+        "effects": {
+          "revenue": 15000,
+          "founderSanity": -10,
+          "employeeHappiness": 0,
+          "margins": -10
         }
       },
       {
-        text: 'Hire new team (enlightenment doesn\'t pay bills)',
-        effects: {
-          cash: -80000,
-          employeeHappiness: -30,
-          founderSanity: -15,
-          margins: 10
+        "text": "Counter-sue them for defamation and pray for clout.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": -15,
+          "employeeHappiness": 5,
+          "margins": -5
         }
       }
     ]
   },
   {
-    id: 'aug-3',
-    month: 8,
-    text: 'A dragon offers to be your company\'s CFO.',
-    choices: [
+    "id": "sep-1",
+    "month": 9,
+    "persona": "opal",
+    "text": "COGS have spiked again. Switch to cheaper ingredients or cry into our empty wallets?",
+    "choices": [
       {
-        text: 'Accept (dragons are great with gold)',
-        effects: {
-          revenue: 250000,
-          margins: 35,
-          founderSanity: -35,
-          employeeHappiness: -25
+        "text": "Yes, who needs quality when you have margin goals?",
+        "effects": {
+          "revenue": 20000,
+          "founderSanity": -5,
+          "employeeHappiness": -5,
+          "margins": 10
         }
       },
       {
-        text: 'Decline (fire insurance is expensive)',
-        effects: {
-          revenue: 30000,
-          margins: 5,
-          founderSanity: 15,
-          employeeHappiness: 10
-        }
-      }
-    ]
-  },
-  
-  // September
-  {
-    id: 'sep-1',
-    month: 9,
-    text: 'Your product became sentient and is demanding royalties.',
-    choices: [
-      {
-        text: 'Negotiate profit sharing (it\'s technically family)',
-        effects: {
-          revenue: -100000,
-          margins: -25,
-          founderSanity: -30,
-          employeeHappiness: 35
-        }
-      },
-      {
-        text: 'Release new "non-sentient" version',
-        effects: {
-          revenue: 50000,
-          cash: -70000,
-          founderSanity: 20,
-          employeeHappiness: -20
+        "text": "Nope. We ride or die with premium aloe vera.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": -10,
+          "employeeHappiness": 5,
+          "margins": -10
         }
       }
     ]
   },
   {
-    id: 'sep-2',
-    month: 9,
-    text: 'Competitors hired a chaos wizard to curse your supply chain.',
-    choices: [
+    "id": "sep-2",
+    "month": 9,
+    "persona": "molly",
+    "text": "Sales look okay but growth is flatlining. Should we raise more funding or pretend we’re profitable?",
+    "choices": [
       {
-        text: 'Counter-curse with blockchain magic',
-        effects: {
-          cash: -150000,
-          revenue: 200000,
-          founderSanity: -40,
-          margins: -15
+        "text": "Raise. Add ‘AI-powered’ to pitch and hope for magic.",
+        "effects": {
+          "revenue": 30000,
+          "founderSanity": -15,
+          "employeeHappiness": 0,
+          "margins": -10
         }
       },
       {
-        text: 'Switch to artisanal hand-crafting',
-        effects: {
-          revenue: -80000,
-          margins: 40,
-          employeeHappiness: -30,
-          founderSanity: -25
+        "text": "Profitability is a vibe. Let’s cut coffee machine budget.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": 5,
+          "employeeHappiness": -5,
+          "margins": 10
         }
       }
     ]
   },
   {
-    id: 'sep-3',
-    month: 9,
-    text: 'Your marketing team got stuck in a time loop of endless meetings.',
-    choices: [
+    "id": "oct-1",
+    "month": 10,
+    "persona": "chad",
+    "text": "Festive season ahead. Should we launch a ‘Diwali Detox Kit’ or just fire our agency and run memes?",
+    "choices": [
       {
-        text: 'Join the loop (infinite productivity!)',
-        effects: {
-          revenue: 150000,
-          margins: -20,
-          founderSanity: -35,
-          employeeHappiness: -30
+        "text": "Detox kit with bonus ladoos. Logic is dead, long live margin!",
+        "effects": {
+          "revenue": 40000,
+          "founderSanity": -10,
+          "employeeHappiness": 5,
+          "margins": -15
         }
       },
       {
-        text: 'Hire temporal consultants',
-        effects: {
-          cash: -100000,
-          founderSanity: 20,
-          employeeHappiness: 25
-        }
-      }
-    ]
-  },
-  
-  // October
-  {
-    id: 'oct-1',
-    month: 10,
-    text: 'Your product started granting wishes (monkey\'s paw style).',
-    choices: [
-      {
-        text: 'Add "Be careful what you wish for" disclaimer',
-        effects: {
-          revenue: 400000,
-          margins: 50,
-          founderSanity: -50,
-          employeeHappiness: -40
-        }
-      },
-      {
-        text: 'Recall all wish-granting units',
-        effects: {
-          revenue: -100000,
-          cash: -200000,
-          founderSanity: 30,
-          employeeHappiness: 20
+        "text": "Memes and reels it is. Cheap, viral, and unhinged.",
+        "effects": {
+          "revenue": 20000,
+          "founderSanity": 10,
+          "employeeHappiness": 0,
+          "margins": 10
         }
       }
     ]
   },
   {
-    id: 'oct-2',
-    month: 10,
-    text: 'A ghost is suing you for stealing their startup idea from their dreams.',
-    choices: [
+    "id": "oct-2",
+    "month": 10,
+    "persona": "vic",
+    "text": "Founder burnout alert. Should we take a vacation or schedule a 10-hour investor sync?",
+    "choices": [
       {
-        text: 'Settle with eternal soul rights',
-        effects: {
-          cash: -120000,
-          founderSanity: -45,
-          employeeHappiness: -35,
-          margins: 30
+        "text": "Vacation. Founder sanity matters (allegedly).",
+        "effects": {
+          "revenue": 5000,
+          "founderSanity": 20,
+          "employeeHappiness": 5,
+          "margins": 0
         }
       },
       {
-        text: 'Hire ghost lawyers',
-        effects: {
-          cash: -80000,
-          revenue: -50000,
-          founderSanity: 25,
-          employeeHappiness: 15
+        "text": "Let’s triple down and cry in the Zoom call.",
+        "effects": {
+          "revenue": 20000,
+          "founderSanity": -20,
+          "employeeHappiness": -5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'oct-3',
-    month: 10,
-    text: 'Your office building achieved consciousness and filed for employee benefits.',
-    choices: [
+    "id": "nov-1",
+    "month": 11,
+    "persona": "karen",
+    "text": "Black Friday sale? Should we drop prices so low we question capitalism?",
+    "choices": [
       {
-        text: 'Accept (it does provide shelter)',
-        effects: {
-          cash: -150000,
-          employeeHappiness: 40,
-          founderSanity: -30,
-          margins: -25
+        "text": "Yes, slash prices. Also slash our dreams.",
+        "effects": {
+          "revenue": 50000,
+          "founderSanity": -10,
+          "employeeHappiness": 0,
+          "margins": -25
         }
       },
       {
-        text: 'Relocate to a less sentient building',
-        effects: {
-          cash: -100000,
-          employeeHappiness: -30,
-          founderSanity: 20,
-          revenue: -40000
-        }
-      }
-    ]
-  },
-  
-  // November
-  {
-    id: 'nov-1',
-    month: 11,
-    text: 'Black Friday turned literal - a black hole formed in your warehouse.',
-    choices: [
-      {
-        text: 'Market it as "quantum shipping"',
-        effects: {
-          revenue: 500000,
-          margins: 60,
-          founderSanity: -55,
-          employeeHappiness: -45
-        }
-      },
-      {
-        text: 'Call NASA (safety first)',
-        effects: {
-          revenue: -150000,
-          cash: -250000,
-          founderSanity: 35,
-          employeeHappiness: 25
+        "text": "Nope. Let’s do a ‘Support Local’ campaign and hope.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": 5,
+          "employeeHappiness": 10,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'nov-2',
-    month: 11,
-    text: 'Your competitors merged into a giant mecha-corporation.',
-    choices: [
+    "id": "nov-2",
+    "month": 11,
+    "persona": "molly",
+    "text": "Amazon rating just dipped to 2.9. Bribe customers with coupons or blame logistics?",
+    "choices": [
       {
-        text: 'Build your own corporate mecha',
-        effects: {
-          cash: -300000,
-          revenue: 400000,
-          founderSanity: -40,
-          employeeHappiness: 35
+        "text": "Bribe ‘em. Coupons for all and fake smiles.",
+        "effects": {
+          "revenue": 15000,
+          "founderSanity": -10,
+          "employeeHappiness": 5,
+          "margins": -10
         }
       },
       {
-        text: 'Focus on guerrilla marketing',
-        effects: {
-          revenue: 100000,
-          margins: 20,
-          founderSanity: 25,
-          employeeHappiness: -20
+        "text": "Blame the courier guy and run.",
+        "effects": {
+          "revenue": 5000,
+          "founderSanity": -5,
+          "employeeHappiness": -5,
+          "margins": 5
         }
       }
     ]
   },
   {
-    id: 'nov-3',
-    month: 11,
-    text: 'Your product started predicting stock markets with 100% accuracy.',
-    choices: [
+    "id": "dec-1",
+    "month": 12,
+    "persona": "vic",
+    "text": "We hit $9.5Mn runrate. Do we hustle to $10Mn or party like it’s already IPO day?",
+    "choices": [
       {
-        text: 'Pivot to fintech (instant billionaire)',
-        effects: {
-          revenue: 1000000,
-          margins: 70,
-          founderSanity: -60,
-          employeeHappiness: -50
+        "text": "Push for $10Mn. Sleep is for the acquired.",
+        "effects": {
+          "revenue": 50000,
+          "founderSanity": -20,
+          "employeeHappiness": -10,
+          "margins": 5
         }
       },
       {
-        text: 'Disable feature (time paradoxes are bad)',
-        effects: {
-          revenue: -200000,
-          founderSanity: 40,
-          employeeHappiness: 30
-        }
-      }
-    ]
-  },
-  
-  // December
-  {
-    id: 'dec-1',
-    month: 12,
-    text: 'Santa offers to acquire your company for his North Pole empire.',
-    choices: [
-      {
-        text: 'Sell for magic beans and reindeer stock',
-        effects: {
-          cash: 1000000,
-          founderSanity: -65,
-          employeeHappiness: -55,
-          margins: 80
-        }
-      },
-      {
-        text: 'Counter-offer with elf equity',
-        effects: {
-          revenue: 300000,
-          margins: 40,
-          founderSanity: 30,
-          employeeHappiness: 25
+        "text": "Party time. We’ll claim ARR on LinkedIn anyway.",
+        "effects": {
+          "revenue": 20000,
+          "founderSanity": 15,
+          "employeeHappiness": 10,
+          "margins": 0
         }
       }
     ]
   },
   {
-    id: 'dec-2',
-    month: 12,
-    text: 'The simulation glitched and duplicated all your metrics.',
-    choices: [
+    "id": "dec-2",
+    "month": 12,
+    "persona": "karen",
+    "text": "You did it! Or did you? Should we launch a 2026 vision deck or just ghost everyone?",
+    "choices": [
       {
-        text: 'Exploit the glitch (infinite money!)',
-        effects: {
-          revenue: 2000000,
-          margins: 100,
-          founderSanity: -70,
-          employeeHappiness: -60
+        "text": "Deck it is. With vague graphs and vibes.",
+        "effects": {
+          "revenue": 10000,
+          "founderSanity": -5,
+          "employeeHappiness": 0,
+          "margins": 5
         }
       },
       {
-        text: 'Report bug to simulation admins',
-        effects: {
-          revenue: -300000,
-          founderSanity: 45,
-          employeeHappiness: 35
-        }
-      }
-    ]
-  },
-  {
-    id: 'dec-3',
-    month: 12,
-    text: 'Future you appears with winning lottery numbers and acquisition offers.',
-    choices: [
-      {
-        text: 'Trust future you (YOLO across timelines)',
-        effects: {
-          cash: 5000000,
-          revenue: 1000000,
-          founderSanity: -80,
-          employeeHappiness: -70
-        }
-      },
-      {
-        text: 'Stick to building legitimately',
-        effects: {
-          revenue: 200000,
-          margins: 30,
-          founderSanity: 50,
-          employeeHappiness: 40
+        "text": "Ghost mode on. CEO = Chief Escapism Officer.",
+        "effects": {
+          "revenue": 0,
+          "founderSanity": 15,
+          "employeeHappiness": 5,
+          "margins": 0
         }
       }
     ]
