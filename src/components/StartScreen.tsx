@@ -12,7 +12,7 @@ const StartScreen: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center px-4 py-8 text-center">
       <div className="pixel-art flex items-center justify-center">
-        <img src="/mascot.png" alt="Mascot" className="w-56" />
+        <img src={`${import.meta.env.BASE_URL}mascot.png`} alt="Mascot" className="w-56" />
       </div>
 
       <div className="pixel-border p-6 max-w-2xl mb-8 bg-white">

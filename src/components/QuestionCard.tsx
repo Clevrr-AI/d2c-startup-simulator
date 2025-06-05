@@ -16,10 +16,11 @@ const QuestionCard: React.FC<QuestionCardProps> = ({ question, onAnswer }) => {
       {/* Flex row: image left, info right */}
       <div className="flex items-center mb-6">
         <img
-          src={`/personas/${persona.id}.png`}
+          src={`${import.meta.env.BASE_URL}personas/${persona.id}.png`}
           alt={persona.name}
           className="w-32 h-32 mr-6 rounded-lg object-cover"
         />
+
         <div className="flex-1">
           <div className="font-bold text-blue-600 text-lg">{persona.name}</div>
           <div className="text-gray-600 mb-2">{persona.title}</div>

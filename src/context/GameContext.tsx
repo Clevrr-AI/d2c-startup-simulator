@@ -123,7 +123,7 @@ const GameContext = createContext<GameContextType | undefined>(undefined);
 // Provider component
 export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(gameReducer, initialState);
-  const [audio] = React.useState(() => new Audio('/music/background.mp3'));
+  const [audio] = React.useState(() => new Audio(`${import.meta.env.BASE_URL}music/background.mp3`));
   const [isAudioPlaying, setIsAudioPlaying] = React.useState(false);
 
   React.useEffect(() => {
