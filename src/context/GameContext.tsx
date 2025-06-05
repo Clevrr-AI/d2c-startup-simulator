@@ -5,7 +5,7 @@ import { getQuestionsForMonth } from '../data/questions';
 
 // Initial game state
 const initialMetrics: GameMetrics = {
-  revenue: 5000,       // Starting with $5k monthly revenue
+  revenue: 50000,       // Starting with $5k monthly revenue
   margins: 40,         // 40% margins
   employeeHappiness: 80, // Scale 0-100
   founderSanity: 90,     // Scale 0-100
