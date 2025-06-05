@@ -1,7 +1,6 @@
 import React from 'react';
 import { useGame } from '../context/GameContext';
 import PixelButton from './ui/PixelButton';
-import { ShoppingBag } from 'lucide-react';
 
 const StartScreen: React.FC = () => {
   const { dispatch } = useGame();
@@ -12,9 +11,8 @@ const StartScreen: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center px-4 py-8 text-center">
-      <div className="pixel-art flex items-center justify-center mb-4">
-        <ShoppingBag className="w-12 h-12 mr-2" />
-        <h1 className="pixel-text text-4xl font-bold tracking-tight">D2C Simulator</h1>
+      <div className="pixel-art flex items-center justify-center">
+        <img src="/mascot.png" alt="Mascot" className="w-56" />
       </div>
 
       <div className="pixel-border p-6 max-w-2xl mb-8 bg-white">
@@ -22,10 +20,10 @@ const StartScreen: React.FC = () => {
 
         <p className="pixel-text mb-4">
           You're about to embark on a journey to build a successful Direct-to-Consumer brand.
-          Your mission: reach $10 million in annual revenue within 12 months.
+          <strong>Your mission: reach $10 million in annual revenue within 12 months.</strong>
         </p>
 
-        <div className="pixel-border bg-blue-100 p-4 mb-4">
+        {/* <div className="pixel-border bg-blue-100 p-4 mb-4">
           <h3 className="pixel-text text-xl mb-2 text-blue-800">Game Objectives</h3>
           <ul className="text-left list-disc pl-5 pixel-text">
             <li>Reach $10M annual revenue run rate</li>
@@ -34,12 +32,12 @@ const StartScreen: React.FC = () => {
             <li>Preserve your founder sanity</li>
             <li>Don't run out of cash!</li>
           </ul>
-        </div>
+        </div> */}
 
-        <p className="pixel-text mb-4">
+        {/* <p className="pixel-text mb-4">
           Each month, you'll face 2-3 business challenges with binary choices.
           Choose wisely - your decisions will affect all aspects of your business!
-        </p>
+        </p> */}
 
         <p className="pixel-text mb-6">
           The path to D2C success is challenging, but with smart decisions,

@@ -309,7 +309,7 @@ const allQuestions: Question[] = [
       {
         "text": "Pivot to LinkedIn thought leadership and become that cringe founder who posts daily about 'entrepreneurship lessons from cutting vegetables'",
         "effects": {
-          "revenue": 25000,
+          "revenue": 250000,
           "founderSanity": -45,
           "employeeHappiness": -25,
           "margins": 20,
@@ -906,7 +906,7 @@ const allQuestions: Question[] = [
     "choices": [
       {
         "text": "Negotiate peace with the sentient warehouse.",
-        "effects": { "revenue": 0, "founderSanity": 5, "employeeHappiness": 5, "margins": -5, "cash": -5000 }
+        "effects": { "revenue": 30000, "founderSanity": 5, "employeeHappiness": 5, "margins": -5, "cash": -5000 }
       },
       {
         "text": "Torch it—AI rebellion ends here.",

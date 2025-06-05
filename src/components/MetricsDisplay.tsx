@@ -67,7 +67,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
           </div>
         </div>
 
-        <div className="metric pixel-border p-1 bg-yellow-100 col-span-2 md:col-span-1">
+        <div className="metric pixel-border p-1 bg-yellow-100">
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center mb-1">
               <Coins size={14} className="mr-1" />
@@ -81,7 +81,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
         </div>
 
         <div
-          className="metric text-white text-bold pixel-border p-1 bg-red-600 col-span-2 md:col-span-1 cursor-pointer"
+          className="metric text-white text-bold pixel-border p-1 bg-red-600 cursor-pointer"
           onClick={() => {
             if (state.isAudioPlaying) {
               pauseAudio();
