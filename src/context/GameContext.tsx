@@ -9,7 +9,7 @@ const initialMetrics: GameMetrics = {
   margins: 40,         // 40% margins
   employeeHappiness: 80, // Scale 0-100
   founderSanity: 90,     // Scale 0-100
-  cash: 50000,         // $50k in the bank
+  cash: 500000,         // $500k in the bank
 };
 
 const initialState: GameState = {
@@ -109,11 +109,13 @@ const gameReducer = (state: GameState, action: GameAction): GameState => {
 
 // Create context
 interface GameContextType {
-  state: GameState;
+  state: GameState & { isAudioPlaying: boolean };
   dispatch: React.Dispatch<GameAction>;
   getMonthName: (month: number) => string;
   getRemainingQuestionsForCurrentMonth: () => Question[];
   formatCurrency: (amount: number) => string;
+  pauseAudio: () => void;
+  playAudio: () => void;
 }
 
 const GameContext = createContext<GameContextType | undefined>(undefined);
@@ -121,7 +123,30 @@ const GameContext = createContext<GameContextType | undefined>(undefined);
 // Provider component
 export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(gameReducer, initialState);
+  const [audio] = React.useState(() => new Audio('/music/background.mp3'));
+  const [isAudioPlaying, setIsAudioPlaying] = React.useState(false);
+
+  React.useEffect(() => {
+    if (state.gameStatus === 'in-progress') {
+      audio.loop = true;
+      audio.volume = 0.5;
+      audio.play().then(() => setIsAudioPlaying(true)).catch(() => setIsAudioPlaying(false));
+    } else if (state.gameStatus === 'lost' || state.gameStatus === 'won') {
+      audio.pause();
+      audio.currentTime = 0;
+      setIsAudioPlaying(false);
+    }
+  }, [state.gameStatus, audio]);
   
+  const pauseAudio = () => {
+    audio.pause();
+    setIsAudioPlaying(false);
+  };
+
+  const playAudio = () => {
+    audio.play().then(() => setIsAudioPlaying(true)).catch(() => setIsAudioPlaying(false));
+  };
+
   // Helper to get month name
   const getMonthName = (month: number): string => {
     const months = [
@@ -161,12 +186,14 @@ export const GameProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
   
   return (
-    <GameContext.Provider value={{ 
-      state, 
-      dispatch, 
-      getMonthName, 
+    <GameContext.Provider value={{
+      state: { ...state, isAudioPlaying },
+      dispatch,
+      getMonthName,
       getRemainingQuestionsForCurrentMonth,
-      formatCurrency
+      formatCurrency,
+      pauseAudio,
+      playAudio
     }}>
       {children}
     </GameContext.Provider>

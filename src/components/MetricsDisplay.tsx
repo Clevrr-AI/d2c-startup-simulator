@@ -1,7 +1,7 @@
 import React from 'react';
 import { useGame } from '../context/GameContext';
 import { GameMetrics } from '../types';
-import { TrendingUp, PieChart, Heart, Brain, Coins } from 'lucide-react';
+import { TrendingUp, PieChart, Heart, Brain, Coins, Megaphone } from 'lucide-react';
 
 interface MetricsDisplayProps {
   metrics: GameMetrics;
@@ -9,12 +9,12 @@ interface MetricsDisplayProps {
 }
 
 const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = false }) => {
-  const { formatCurrency } = useGame();
+  const { formatCurrency, state, pauseAudio, playAudio } = useGame();
 
   if (compact) {
     return (
       <div className="metrics grid grid-cols-2 md:grid-cols-6 gap-2 text-center">
-        
+
         <div className="metric pixel-border p-1 bg-green-100">
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center mb-1">
@@ -68,11 +68,42 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
         </div>
 
         <div className="metric pixel-border p-1 bg-yellow-100 col-span-2 md:col-span-1">
-          <div className="flex items-center justify-center">
-            <Coins size={14} className="mr-1" />
-            <span className="pixel-text text-sm">{formatCurrency(metrics.cash)} cash</span>
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex items-center mb-1">
+              <Coins size={14} className="mr-1" />
+              <span className="pixel-text text-sm">{formatCurrency(metrics.cash)} cash</span>
+            </div>
+            <div className="w-full bg-gray-200 h-4 pixel-border">
+              <div className="bg-yellow-500 h-full" style={{ width: `${metrics.cash / 10000}%` }}>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div
+          className="metric text-white text-bold pixel-border p-1 bg-red-600 col-span-2 md:col-span-1 cursor-pointer"
+          onClick={() => {
+            if (state.isAudioPlaying) {
+              pauseAudio();
+            } else {
+              playAudio();
+            }
+          }}
+          title={state.isAudioPlaying ? 'Mute audio' : 'Unmute audio'}
+        >
+          <div className="flex flex-col items-center justify-center">
+            <div className="flex items-center mb-1">
+              <Megaphone
+          size={14}
+          className={`mr-1`}
+              />
+              <span className="pixel-text text-sm">
+          {state.isAudioPlaying ? 'Mute' : 'Unmute'}
+              </span>
+            </div>
+          </div>
+        </div>
+
       </div>
     );
   }

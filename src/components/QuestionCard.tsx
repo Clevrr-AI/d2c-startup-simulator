@@ -1,12 +1,6 @@
 import React from 'react';
 import { Question } from '../types';
 import { personas } from '../data/personas';
-import chad from '../assets/personas/chad.png';
-import molly from '../assets/personas/molly.png';
-import karen from '../assets/personas/karen.png';
-import clevrr from '../assets/personas/clevrr.png';
-import opal from '../assets/personas/opal.png';
-import vic from '../assets/personas/vic.png';
 import PixelButton from './ui/PixelButton';
 
 interface QuestionCardProps {
@@ -16,21 +10,13 @@ interface QuestionCardProps {
 
 const QuestionCard: React.FC<QuestionCardProps> = ({ question, onAnswer }) => {
   const persona = personas[question.persona];
-  const imgs = {
-    chad: chad,
-    molly: molly,
-    karen: karen,
-    clevrr: clevrr,
-    opal: opal,
-    vic: vic,
-  };
 
   return (
     <div className="question-card pixel-border p-6 bg-white max-w-2xl w-full animate-fadeIn">
       {/* Flex row: image left, info right */}
       <div className="flex items-center mb-6">
         <img
-          src={imgs[persona.id]}
+          src={`/personas/${persona.id}.png`}
           alt={persona.name}
           className="w-32 h-32 mr-6 rounded-lg object-cover"
         />

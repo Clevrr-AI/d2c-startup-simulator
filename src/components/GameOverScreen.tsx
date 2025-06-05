@@ -45,11 +45,15 @@ const GameOverScreen: React.FC = () => {
             <p>
               {state.metrics.cash < 0
                 ? "You've run out of money. Cash flow is critical for any business."
-                : state.metrics.founderSanity <= 0
+                : state.metrics.founderSanity <= 20
                 ? "Your founder sanity reached zero. Remember to take care of yourself."
-                : state.metrics.employeeHappiness <= 0
+                : state.metrics.employeeHappiness <= 10
                 ? "Your employees all quit. A business is only as strong as its team."
-                : "You didn't reach $10M in annual revenue. Keep learning and try again!"}
+                : state.metrics.margins <= 5
+                ? "Your margins are too low. Profitability is key to sustainability."
+                : state.metrics.revenue <= 1000
+                ? "Your revenue is too low. Focus on growth and scaling."
+                : "You made it through, but not without challenges. Reflect on your decisions and learn for next time."}
             </p>
           )}
         </div>
