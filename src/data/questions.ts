@@ -1158,7 +1158,128 @@ const allQuestions: Question[] = [
       }
     ]
   },
-
+  {
+    "id": "dec-1",
+    "month": 12,
+    "persona": "chad",
+    "text": "Holy shit, it's December 20th and we're still ₹2.5 crores short of our ₹10 crore target. I found a grey-hat growth hack that could pump our numbers - fake a controversy, get 'cancelled' on Twitter, then do a comeback sale. It's risky as hell but could generate massive FOMO. This is do-or-die time, bro.",
+    "choices": [
+      {
+        "text": "YOLO - manufacture the controversy and ride the chaos to victory",
+        "effects": {
+          "revenue": 80000,
+          "founderSanity": -40,
+          "employeeHappiness": -50,
+          "margins": -20,
+          "cash": 120000
+        }
+      },
+      {
+        "text": "Stay ethical - grind it out with honest marketing till the last day",
+        "effects": {
+          "revenue": 35000,
+          "founderSanity": 10,
+          "employeeHappiness": 20,
+          "margins": 15,
+          "cash": 50000
+        }
+      },
+      {
+        "text": "Let Clevrr AI generate 'viral controversy ideas that boost sales without legal consequences while maintaining brand integrity'",
+        "effects": {
+          "revenue": -15000,
+          "founderSanity": -25,
+          "employeeHappiness": -20,
+          "margins": -10,
+          "cash": -30000
+        }
+      }
+    ]
+  },
+  {
+    "id": "dec-2",
+    "month": 12,
+    "persona": "molly",
+    "text": "I've been cooking the books for months to keep us looking healthy, but now the auditors are here for year-end review. I can either confess everything and face the consequences, or double down and pray we hit our targets to cover the gaps. If we fail, it's fraud charges. If we succeed, I'm a genius. No pressure.",
+    "choices": [
+      {
+        "text": "Confess everything - take the hit now and rebuild with clean books",
+        "effects": {
+          "revenue": -60000,
+          "founderSanity": -30,
+          "employeeHappiness": -40,
+          "margins": -50,
+          "cash": -200000
+        }
+      },
+      {
+        "text": "Double down - forge ahead and hope the numbers work out by December 31st",
+        "effects": {
+          "revenue": 45000,
+          "founderSanity": -60,
+          "employeeHappiness": -30,
+          "margins": 30,
+          "cash": 80000
+        }
+      }
+    ]
+  },
+  {
+    "id": "dec-3",
+    "month": 12,
+    "persona": "vic",
+    "text": "Kid, I've got good news and bad news. Bad news: The board voted to replace you as CEO. Good news: I convinced them to give you one last chance. Hit ₹10 crore ARR by December 31st or you're out. Also, I'm putting my nephew as interim COO to 'help' you. He's 22 and his only experience is crypto trading. Thoughts?",
+    "choices": [
+      {
+        "text": "Accept the terms - work with the nepotism hire and fight for your company",
+        "effects": {
+          "revenue": 25000,
+          "founderSanity": -45,
+          "employeeHappiness": -35,
+          "margins": -15,
+          "cash": 40000
+        }
+      },
+      {
+        "text": "Fuck it - quit before they fire you and start fresh with a new venture",
+        "effects": {
+          "revenue": -100000,
+          "founderSanity": 30,
+          "employeeHappiness": -60,
+          "margins": -100,
+          "cash": -300000
+        }
+      }
+    ]
+  },
+  {
+    "id": "dec-4",
+    "month": 12,
+    "persona": "karen",
+    "text": "Plot twist: A customer found a way to exploit our return policy and has been getting free products for months. But instead of reporting it, they're now offering to teach us how to fix the loophole in exchange for a lifetime supply of products. They claim they're actually helping us avoid bigger losses. Trust the ethical hacker or call the cops?",
+    "choices": [
+      {
+        "text": "Make a deal with the devil - hire them as a 'security consultant'",
+        "effects": {
+          "revenue": 15000,
+          "founderSanity": 20,
+          "employeeHappiness": 15,
+          "margins": 25,
+          "cash": 30000
+        }
+      },
+      {
+        "text": "Report them and fix the system ourselves - justice over convenience",
+        "effects": {
+          "revenue": -10000,
+          "founderSanity": 10,
+          "employeeHappiness": 25,
+          "margins": 10,
+          "cash": -20000
+        }
+      }
+    ]
+  }
 ];
 
 // Get random questions for a specific month

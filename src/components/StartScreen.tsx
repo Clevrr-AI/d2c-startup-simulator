@@ -54,6 +54,10 @@ const StartScreen: React.FC = () => {
         <a href="https://getclevrr.com/?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator" target="_blank" className="underline">
           Clevrr AI
         </a>
+        . Opensourced at{' '}
+        <a href="https://github.com/clevrr-ai/d2c-startup-simulator" target="_blank" className="underline">
+          GitHub
+        </a>.
       </p>
 
     </div>
