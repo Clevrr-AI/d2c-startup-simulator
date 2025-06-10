@@ -18,7 +18,7 @@ const StartScreen: React.FC = () => {
       <div className="pixel-border p-6 max-w-2xl mb-8 bg-white">
         <h2 className="pixel-text text-2xl mb-4 text-blue-800">Welcome, Founder!</h2>
 
-        <p className="pixel-text mb-4">
+        <p className="pixel-text mb-4" style={{ fontSize: "21px" }}>
           You're about to embark on a journey to build a successful Direct-to-Consumer brand.
           <strong>Your mission: reach $10 million in annual revenue within 12 months.</strong>
         </p>

@@ -22,7 +22,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
               <span className="pixel-text text-sm">{formatCurrency(metrics.revenue)}/mo</span>
             </div>
             <div className="w-full bg-green-200 h-4 pixel-border">
-              <div className="bg-green-500 h-full" style={{ width: `${metrics.revenue / 10000}%` }}>
+              <div className="bg-green-500 h-full" style={{ width: `${metrics.revenue / 833333 * 100}%` }}>
               </div>
             </div>
           </div>
