@@ -2,6 +2,9 @@ import React from 'react';
 import { useGame } from '../context/GameContext';
 import PixelButton from './ui/PixelButton';
 import MetricsDisplay from './MetricsDisplay';
+import { db } from '../config/firebase'
+import { collection, addDoc } from 'firebase/firestore';
+import { useEffect } from 'react';
 
 const GameOverScreen: React.FC = () => {
   const { state, dispatch } = useGame();
@@ -46,6 +49,36 @@ const GameOverScreen: React.FC = () => {
     dispatch({ type: 'START_GAME' });
   };
 
+  const saveToFirebase = async () => {
+    try {
+      const gameData = {
+        brandName: state.brandName,
+        metrics: state.metrics,
+        questionHistory: state.questionHistory,
+        gameStatus: state.gameStatus,
+        timestamp: new Date()
+      };
+      console.log(gameData);
+      const docRef = await addDoc(collection(db, 'gameResults'), gameData);
+      console.log('Game data saved with ID:', docRef.id);
+    } catch (error) {
+      console.error('Error saving game data:', error);
+    }
+  };
+  useEffect(() => {
+    const gameData = {
+        brandName: state.brandName,
+        metrics: state.metrics,
+        questionHistory: state.questionHistory,
+        gameStatus: state.gameStatus,
+        timestamp: new Date()
+      };
+      console.log(gameData);
+    // Save game results to Firebase when the component mounts
+    saveToFirebase();
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [state.brandName, state.metrics, state.questionHistory, state.gameStatus]);
+
   return (
     <div className="flex flex-col items-center justify-center px-4 py-8 text-center">
       <h2 className="pixel-text text-3xl mb-6">
@@ -57,11 +90,11 @@ const GameOverScreen: React.FC = () => {
           {/* get random winning or loosing message to display here */}
           {isWin
             ? winningMessages.win[Math.floor(Math.random() * winningMessages.win.length)]
-            : state.metrics.cash < 0
+            : state.metrics.cash <= 0
               ? loosingMessages.cash[Math.floor(Math.random() * loosingMessages.cash.length)]
-              : state.metrics.founderSanity <= 20
+              : state.metrics.founderSanity <= 0
                 ? loosingMessages.founderSanity[Math.floor(Math.random() * loosingMessages.founderSanity.length)]
-                : state.metrics.employeeHappiness <= 10
+                : state.metrics.employeeHappiness <= 0
                   ? loosingMessages.employeeHappiness[Math.floor(Math.random() * loosingMessages.employeeHappiness.length)]
                   : state.metrics.revenue <= 1000
                     ? loosingMessages.revenue[Math.floor(Math.random() * loosingMessages.revenue.length)]
