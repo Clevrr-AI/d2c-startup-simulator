@@ -5,7 +5,7 @@ import { getQuestionsForMonth } from '../data/questions';
 
 // Initial game state
 const initialMetrics: GameMetrics = {
-  revenue: 50000,       // Starting with $5k monthly revenue
+  revenue: 50000,       // Starting with $50k monthly revenue
   margins: 40,         // 40% margins
   employeeHappiness: 80, // Scale 0-100
   founderSanity: 90,     // Scale 0-100
@@ -63,15 +63,21 @@ const gameReducer = (state: GameState, action: GameAction): GameState => {
       newMetrics.margins = Math.max(0, Math.min(100, newMetrics.margins));
       newMetrics.employeeHappiness = Math.max(0, Math.min(100, newMetrics.employeeHappiness));
       newMetrics.founderSanity = Math.max(0, Math.min(100, newMetrics.founderSanity));
+      newMetrics.cash = Math.max(0, newMetrics.cash);
+      newMetrics.revenue = Math.max(0, newMetrics.revenue);
       
       // Check for game over conditions
       let gameStatus = state.gameStatus;
       
-      if (newMetrics.cash < 0) {
+      if (newMetrics.cash <= 0) {
         gameStatus = 'lost';
-      } else if (newMetrics.founderSanity <= 30) {
+      } else if (newMetrics.founderSanity <= 0) {
         gameStatus = 'lost';
-      } else if (newMetrics.employeeHappiness <= 20) {
+      } else if (newMetrics.employeeHappiness <= 0) {
+        gameStatus = 'lost';
+      } else if (newMetrics.revenue <= 1000) {
+        gameStatus = 'lost';
+      } else if (newMetrics.margins < 10) {
         gameStatus = 'lost';
       } else if (state.currentMonth === 12 && getQuestionsForMonth(12).indexOf(question) === getQuestionsForMonth(12).length - 1) {
         // Last question of month 12
