@@ -15,7 +15,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
     return (
       <div className="metrics grid grid-cols-2 md:grid-cols-6 gap-2 text-center">
 
-        <div className="metric pixel-border p-1 bg-green-100">
+        <div className={metrics.revenue <= 10000 ? "metric pixel-border p-1 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-1 bg-green-100"}>
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center mb-1">
               <TrendingUp size={14} className="mr-1" />
@@ -28,7 +28,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
           </div>
         </div>
 
-        <div className="metric pixel-border p-1 bg-blue-100">
+        <div className={metrics.margins <= 25 ? "metric pixel-border p-1 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-1 bg-blue-100"}>
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center mb-1">
               <PieChart size={14} className="mr-1" />
@@ -41,7 +41,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
           </div>
         </div>
 
-        <div className="metric pixel-border p-1 bg-red-100">
+        <div className={metrics.employeeHappiness <= 20 ? "metric pixel-border p-1 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-1 bg-red-100"}>
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center mb-1">
               <Heart size={14} className="mr-1" />
@@ -54,7 +54,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
           </div>
         </div>
 
-        <div className="metric pixel-border p-1 bg-purple-100">
+        <div className={metrics.founderSanity <= 25 ? "metric pixel-border p-1 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-1 bg-purple-100"}>
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center mb-1">
               <Brain size={14} className="mr-1" />
@@ -67,7 +67,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
           </div>
         </div>
 
-        <div className="metric pixel-border p-1 bg-yellow-100">
+        <div className={metrics.cash <= 50000 ? "metric pixel-border p-1 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-1 bg-yellow-100"}>
           <div className="flex flex-col items-center justify-center">
             <div className="flex items-center mb-1">
               <Coins size={14} className="mr-1" />
