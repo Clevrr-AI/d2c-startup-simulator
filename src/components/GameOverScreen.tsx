@@ -41,6 +41,11 @@ const GameOverScreen: React.FC = () => {
       "Revenue dreams crushed harder than an IIT aspirant after JEE results. Now you're stuck attending cousin weddings, awkwardly explaining your 'startup experiment.'",
       "Missed revenue targets hit you harder than an Indian mom’s flying chappal. You're living off mom’s dabbas again, desperately avoiding ‘settle down’ conversations.",
       "Revenue shortfall hits brutally—you're last seen convincing Ola drivers to become your business partners, offering 50% equity for petrol money."
+    ],
+    "margins": [
+      "Margins tighter than your jeans after Diwali. You’re now selling homemade ladoos on Instagram, hoping to recoup losses.",
+      "Your margins are so low, you’re now offering free samples at local markets, trying to convince people that your brand is 'premium.'",
+      "Margins are in the red, and you're now seen hawking discount coupons outside malls, trying to salvage your dignity."
     ]
   }
 
@@ -67,17 +72,17 @@ const GameOverScreen: React.FC = () => {
   };
   useEffect(() => {
     const gameData = {
-        brandName: state.brandName,
-        metrics: state.metrics,
-        questionHistory: state.questionHistory,
-        gameStatus: state.gameStatus,
-        timestamp: new Date()
-      };
-      console.log(gameData);
+      brandName: state.brandName,
+      metrics: state.metrics,
+      questionHistory: state.questionHistory,
+      gameStatus: state.gameStatus,
+      timestamp: new Date()
+    };
+    console.log(gameData);
     // Save game results to Firebase when the component mounts
     saveToFirebase();
-// eslint-disable-next-line react-hooks/exhaustive-deps
-}, [state.brandName, state.metrics, state.questionHistory, state.gameStatus]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.brandName, state.metrics, state.questionHistory, state.gameStatus]);
 
   return (
     <div className="flex flex-col items-center justify-center px-4 py-8 text-center">
@@ -98,7 +103,10 @@ const GameOverScreen: React.FC = () => {
                   ? loosingMessages.employeeHappiness[Math.floor(Math.random() * loosingMessages.employeeHappiness.length)]
                   : state.metrics.revenue <= 1000
                     ? loosingMessages.revenue[Math.floor(Math.random() * loosingMessages.revenue.length)]
-                    : "You made it through, but not without challenges. Reflect on your decisions and learn for next time."}
+                    : state.metrics.margins < 10
+                      ? loosingMessages.margins[Math.floor(Math.random() * loosingMessages.margins.length)]
+                      :
+                      "You made it through, but not without challenges. Reflect on your decisions and learn for next time."}
         </h3>
 
         <div className="mb-6">
@@ -106,14 +114,19 @@ const GameOverScreen: React.FC = () => {
         </div>
 
         <div className="mb-6 pixel-text">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+            <PixelButton onClick={handleRestart} className="animate-pulse">
+              {isWin ? "Play Again" : "Try again?"}
+            </PixelButton>
+
             {/* WhatsApp Share */}
             <a
               href={`https://wa.me/?text=${encodeURIComponent(
-              (isWin
-                ? `I built a $10M D2C brand in 12 months! Can you beat my score?`
-                : `I failed to build a successful D2C brand. Can you do better?`
-              ) + ` Check it out: https://getclevrr.com/d2c-simulator?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator`
+                (isWin
+                  ? `I built a $10M D2C brand in 12 months! Can you beat my score?`
+                  : `I failed to build a successful D2C brand. Can you do better?`
+                ) + ` Check it out: https://getclevrr.com/d2c-simulator?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -125,10 +138,10 @@ const GameOverScreen: React.FC = () => {
             {/* Twitter Share */}
             <a
               href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-              (isWin
-                ? `I built a $10M D2C brand in 12 months! Can you beat my score?`
-                : `I failed to build a successful D2C brand. Can you do better?`
-              ) + ` Check it out: https://d2c-simulator.com?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator`
+                (isWin
+                  ? `I built a $10M D2C brand in 12 months! Can you beat my score?`
+                  : `I failed to build a successful D2C brand. Can you do better?`
+                ) + ` Check it out: https://d2c-simulator.com?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -140,19 +153,19 @@ const GameOverScreen: React.FC = () => {
             {/* Copy to Clipboard */}
             <button
               onClick={() => {
-              const shareText = isWin
-                ? `I built a $10M D2C brand in 12 months! Can you beat my score?`
-                : `I failed to build a successful D2C brand. Can you do better?`;
-              const shareUrl = `https://d2c-simulator.com?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator`;
-              const shareMessage = `${shareText} Check it out: ${shareUrl}`;
-              navigator.clipboard.writeText(shareMessage);
-              alert('Results copied to clipboard! Share your journey with friends!');
+                const shareText = isWin
+                  ? `I built a $10M D2C brand in 12 months! Can you beat my score?`
+                  : `I failed to build a successful D2C brand. Can you do better?`;
+                const shareUrl = `https://d2c-simulator.com?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator`;
+                const shareMessage = `${shareText} Check it out: ${shareUrl}`;
+                navigator.clipboard.writeText(shareMessage);
+                alert('Results copied to clipboard! Share your journey with friends!');
               }}
               className="pixel-button bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors"
             >
               Copy to Clipboard
             </button>
-            </div>
+          </div>
 
         </div>
       </div>
@@ -169,9 +182,6 @@ const GameOverScreen: React.FC = () => {
         </div>
       </div>
 
-      <PixelButton onClick={handleRestart} className="animate-pulse">
-        Play Again
-      </PixelButton>
     </div>
   );
 };

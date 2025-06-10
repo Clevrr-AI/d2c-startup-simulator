@@ -110,7 +110,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
 
   return (
     <div className="metrics grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div className="metric pixel-border p-4 bg-green-100">
+      <div className={metrics.revenue <= 1000 ? "metric pixel-border p-4 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-4 bg-green-100"}>
         <div className="flex items-center mb-2">
           <TrendingUp className="mr-2" />
           <h4 className="pixel-text font-bold">Revenue</h4>
@@ -119,7 +119,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
         <p className="pixel-text text-sm">Annual: {formatCurrency(metrics.revenue * 12)}</p>
       </div>
 
-      <div className="metric pixel-border p-4 bg-blue-100">
+      <div className={metrics.margins <= 10 ? "metric pixel-border p-4 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-4 bg-blue-100"}>
         <div className="flex items-center mb-2">
           <PieChart className="mr-2" />
           <h4 className="pixel-text font-bold">Profit Margins</h4>
@@ -128,7 +128,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
         <p className="pixel-text text-sm">Profit: {formatCurrency(metrics.revenue * (metrics.margins / 100))}/mo</p>
       </div>
 
-      <div className="metric pixel-border p-4 bg-yellow-100">
+      <div className={metrics.cash <= 0 ? "metric pixel-border p-4 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-4 bg-yellow-100"}>
         <div className="flex items-center mb-2">
           <Coins className="mr-2" />
           <h4 className="pixel-text font-bold">Cash</h4>
@@ -137,7 +137,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
         <p className="pixel-text text-sm">Runway: {Math.floor(metrics.cash / (metrics.revenue * (1 - metrics.margins / 100)))} months</p>
       </div>
 
-      <div className="metric pixel-border p-4 bg-red-100 md:col-span-1.5">
+      <div className={metrics.employeeHappiness <= 0 ? "metric pixel-border p-4 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-4 bg-red-100 md:col-span-1.5"}>
         <div className="flex items-center mb-2">
           <Heart className="mr-2" />
           <h4 className="pixel-text font-bold">Employee Happiness</h4>
@@ -151,7 +151,7 @@ const MetricsDisplay: React.FC<MetricsDisplayProps> = ({ metrics, compact = fals
         <p className="pixel-text text-sm mt-1">{metrics.employeeHappiness}%</p>
       </div>
 
-      <div className="metric pixel-border p-4 bg-purple-100 md:col-span-1.5">
+      <div className={metrics.founderSanity <= 0 ? "metric pixel-border p-4 bg-red-500 text-dark animate-pulse" : "metric pixel-border p-4 bg-purple-100 md:col-span-1.5"}>
         <div className="flex items-center mb-2">
           <Brain className="mr-2" />
           <h4 className="pixel-text font-bold">Founder Sanity</h4>
