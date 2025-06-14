@@ -22,17 +22,18 @@ const SetupScreen: React.FC = () => {
   if (showingInitialMetrics) {
     return (
       <div className="flex flex-col items-center justify-center px-4 py-8 text-center">
-        <h2 className="pixel-text text-3xl mb-6">
-          Welcome to <span className="text-blue-600">{brandName}</span>!
-        </h2>
-
         <div className="pixel-border p-6 max-w-2xl mb-8 bg-white">
-          <h3 className="pixel-text text-2xl mb-4">Your Starting Metrics</h3>
+          <h2 className="pixel-text text-3xl mb-6">
+            Welcome, <span className="text-blue-600">{brandName}</span>!
+          </h2>
 
-          <p className="pixel-text mb-6" style={{ fontSize: "21px" }}>
-            These are your starting metrics. Your decisions will affect these values throughout the game.
-            Remember, your goal is to reach $10M in annual revenue, which means about $833K in monthly revenue.
+          <p className="pixel-text mb-3" style={{ fontSize: "21px" }}>
+            These are your starting metrics. Your decisions will affect these values throughout the game. Remember, your goal is to <strong>reach $10M in annual revenue</strong>. Good Luck!
           </p>
+
+          <PixelButton onClick={handleStartGame} className="animate-pulse mb-6">
+            Bring it On!
+          </PixelButton>
 
           <div className="mb-6">
             <MetricsDisplay metrics={state.metrics} />
@@ -41,9 +42,6 @@ const SetupScreen: React.FC = () => {
           <p className="pixel-text mb-4 font-bold">
             You have 12 months. Good luck!
           </p>
-          <PixelButton onClick={handleStartGame} className="animate-pulse">
-            Begin Month 1: January
-          </PixelButton>
         </div>
       </div>
     );

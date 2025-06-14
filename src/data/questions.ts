@@ -21,8 +21,8 @@ const allQuestions: Question[] = [
     ]
   },
   {
-    "id": "jan-2",
-    "month": 1,
+    "id": "feb-5",
+    "month": 2,
     "persona": "molly",
     "text": "I think i fucked up some numbers because a big fat GST notice just dropped.",
     "choices": [
@@ -49,8 +49,8 @@ const allQuestions: Question[] = [
     ]
   },
   {
-    "id": "jan-3",
-    "month": 1,
+    "id": "feb-6",
+    "month": 2,
     "persona": "opal",
     "text": "Supplier accidentally shipped 500 neon-pink bath bombs instead of the neutral ones we ordered. Do we sell them ironically or raise hell?",
     "choices": [
@@ -80,7 +80,7 @@ const allQuestions: Question[] = [
     "id": "jan-4",
     "month": 1,
     "persona": "chad",
-    "text": "Random question—Would you rather fight 100 duck-sized unicorns or 1 unicorn-sized duck? Choose wisely, founder.",
+    "text": "Random question—Would you rather fight 100 duck-sized unicorns or 1 unicorn-sized duck? Choose wisely.",
     "choices": [
       {
         "text": "100 duck-sized unicorns—sounds manageable.",
@@ -1335,8 +1335,23 @@ const allQuestions: Question[] = [
 // Get random questions for a specific month
 export const getQuestionsForMonth = (month: number): Question[] => {
   const monthQuestions = allQuestions.filter(q => q.month === month);
-  // Randomly select 2-3 questions for the month
-  const numQuestions = Math.floor(Math.random() * 2) + 2; // 2-3 questions
+  const availableCount = monthQuestions.length;
+
+  if (availableCount < 2) {
+    // Not enough questions — return all (0 or 1)
+    return monthQuestions;
+  }
+
+  // Choose 2 or 3 questions, but no more than availableCount
+  const numQuestions = Math.min(
+    Math.floor(Math.random() * 2) + 2, // 2 or 3
+    availableCount
+  );
+
+  console.log(numQuestions);
+  
+
+  // Shuffle and return the selected number
   return monthQuestions
     .sort(() => Math.random() - 0.5)
     .slice(0, numQuestions);

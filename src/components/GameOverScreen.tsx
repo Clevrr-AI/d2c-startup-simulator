@@ -88,6 +88,9 @@ const GameOverScreen: React.FC = () => {
     <div className="flex flex-col items-center justify-center px-4 py-8 text-center">
       <h2 className="pixel-text text-3xl mb-6">
         {isWin ? '🏆 Congratulations!' : '💀 Game Over'}
+        <PixelButton onClick={handleRestart} className="animate-pulse">
+          {isWin ? "Play Again" : "Try again?"}
+        </PixelButton>
       </h2>
 
       <div className="pixel-border p-6 max-w-2xl mb-8 bg-white">
@@ -116,17 +119,13 @@ const GameOverScreen: React.FC = () => {
         <div className="mb-6 pixel-text">
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
 
-            <PixelButton onClick={handleRestart} className="animate-pulse">
-              {isWin ? "Play Again" : "Try again?"}
-            </PixelButton>
-
             {/* WhatsApp Share */}
             <a
               href={`https://wa.me/?text=${encodeURIComponent(
                 (isWin
                   ? `I built a $10M D2C brand in 12 months! Can you beat my score?`
                   : `I failed to build a successful D2C brand. Can you do better?`
-                ) + ` Check it out: https://getclevrr.com/d2c-simulator?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator`
+                ) + ` Check it out: https://getclevrr.com/d2c-startup-simulator?utm-source=whatsapp&utm-medium=share&utm-campaign=d2c_startup_simulator`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
@@ -137,34 +136,38 @@ const GameOverScreen: React.FC = () => {
 
             {/* Twitter Share */}
             <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+              href={`https://x.com/intent/tweet?text=${encodeURIComponent(
                 (isWin
                   ? `I built a $10M D2C brand in 12 months! Can you beat my score?`
                   : `I failed to build a successful D2C brand. Can you do better?`
-                ) + ` Check it out: https://d2c-simulator.com?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator`
+                ) + ` Check it out: https://getclevrr.com/d2c-startup-simulator/?utm-source=whatsapp&utm-medium=share&utm-campaign=d2c_startup_simulator`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="pixel-button bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors"
+              className="pixel-button bg-black text-white px-4 py-2 rounded hover:bg-black-700 transition-colors"
             >
-              Share on Twitter
+              Share on X
             </a>
 
-            {/* Copy to Clipboard */}
-            <button
-              onClick={() => {
-                const shareText = isWin
-                  ? `I built a $10M D2C brand in 12 months! Can you beat my score?`
-                  : `I failed to build a successful D2C brand. Can you do better?`;
-                const shareUrl = `https://d2c-simulator.com?utm-source=d2c-simulator&utm-medium=referral&utm-campaign=d2c-simulator`;
-                const shareMessage = `${shareText} Check it out: ${shareUrl}`;
-                navigator.clipboard.writeText(shareMessage);
-                alert('Results copied to clipboard! Share your journey with friends!');
-              }}
-              className="pixel-button bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors"
+            {/* Landing Page */}
+            <a
+              href={`https://getclevrr.com/?utm-source=game&utm-medium=game-over&utm-campaign=d2c_startup_simulator`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pixel-button bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
             >
-              Copy to Clipboard
-            </button>
+              Get Better at this
+            </a>
+
+            {/* Book a Demo Page */}
+            <a
+              href={`https://cal.getclevrr.com/demo`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pixel-button bg-yellow-500 text-black px-4 py-2 rounded hover:bg-yellow-600 transition-colors"
+            >
+              Meet the Creators
+            </a>
           </div>
 
         </div>
