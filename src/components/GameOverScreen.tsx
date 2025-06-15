@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 const GameOverScreen: React.FC = () => {
   const { state, dispatch } = useGame();
-  const isWin = state.gameStatus === 'won';
+  const isWin = state.metrics.revenue >= 833333;
 
   const winningMessages = {
     "win": [
@@ -60,7 +60,7 @@ const GameOverScreen: React.FC = () => {
         brandName: state.brandName,
         metrics: state.metrics,
         questionHistory: state.questionHistory,
-        gameStatus: state.gameStatus,
+        gameStatus: state.metrics.revenue > 833333 ? 'win': 'lost',
         timestamp: new Date()
       };
       console.log(gameData);
@@ -96,7 +96,7 @@ const GameOverScreen: React.FC = () => {
       <div className="pixel-border p-6 max-w-2xl mb-8 bg-white">
         <h3 className="pixel-text text-2xl mb-6">
           {/* get random winning or loosing message to display here */}
-          {isWin
+          {state.metrics.revenue >= 833333
             ? winningMessages.win[Math.floor(Math.random() * winningMessages.win.length)]
             : state.metrics.cash <= 0
               ? loosingMessages.cash[Math.floor(Math.random() * loosingMessages.cash.length)]
