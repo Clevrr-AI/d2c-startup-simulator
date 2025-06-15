@@ -131,7 +131,7 @@ const allQuestions: Question[] = [
         }
       },
       {
-        "text": "No Honey, No Money! Fuck, I'm so single T_T",
+        "text": "No Honey, No Money! I'm so single T_T",
         "effects": {
           "revenue": 55000,
           "founderSanity": -30,
@@ -454,7 +454,7 @@ const allQuestions: Question[] = [
     "id": "may-1",
     "month": 5,
     "persona": "vic",
-    "text": "I want 10x growth by Diwali or I'm pulling out (unlike your dad). Also, I'm gonna send Wharton nephew to 'fix' your biz.",
+    "text": "I want 10x growth by Diwali or I'm out. Also, I have a nephew who did Business from Wharton to 'fix' you.",
     "choices": [
       {
         "text": "Let Wharton bro take over. Die inside quietly.",
@@ -510,7 +510,7 @@ const allQuestions: Question[] = [
     "id": "may-3",
     "month": 5,
     "persona": "molly",
-    "text": "Investors found out about the 1,40,000 cocaine party we did last time. They're asking some questions.",
+    "text": "Investors found out about the ₹1,40,000 cocaine party we did last time. They're asking some questions.",
     "choices": [
       {
         "text": "Invite them to the next Cocaine party.",
@@ -538,7 +538,7 @@ const allQuestions: Question[] = [
     "id": "may-4",
     "month": 5,
     "persona": "chad",
-    "text": "You got banned for posting 'Building Startups by watch Twitter and Podcast is like learning to have Sex while watch porn' on LinkedIn.",
+    "text": "You got banned for posting 'Building Startups by watching Twitter and Podcast is like learning to have Sex while watching porn' on LinkedIn.",
     "choices": [
       {
         "text": "Re-post with Examples.",
@@ -650,7 +650,7 @@ const allQuestions: Question[] = [
     "id": "jun-4",
     "month": 6,
     "persona": "chad",
-    "text": "Investor’s Gen Z niece hacked our Insta. She’s twerking with our product and no bra to a heartbreak remix—and it’s outperforming our Q4. Brand’s having an identity crisis.",
+    "text": "Investor’s Gen Z niece hacked our Insta. She’s twerking with our product to a heartbreak remix—and it’s outperforming our Q4. Brand’s having an identity crisis.",
     "choices": [
       {
         "text": "Let her rebrand it all.",
@@ -663,7 +663,7 @@ const allQuestions: Question[] = [
         }
       },
       {
-        "text": "Dikha Dikha, mujhe bhi dikha.",
+        "text": "Create a new page. What are kids on these days, huh",
         "effects": {
           "revenue": 0,
           "founderSanity": -15,
@@ -709,16 +709,6 @@ const allQuestions: Question[] = [
     "text": "It’s July. Your numbers look like your Tinder bio—unrealistic and sad. Show me money or I show you the exit.",
     "choices": [
       {
-        "text": "Jokes on you, I'm only on Grindr",
-        "effects": {
-          "revenue": 150000,
-          "founderSanity": -20,
-          "employeeHappiness": -20,
-          "margins": -40,
-          "cash": 0
-        }
-      },
-      {
         "text": "Why are you looking at my Tinder?",
         "effects": {
           "revenue": 80000,
@@ -734,7 +724,7 @@ const allQuestions: Question[] = [
     "id": "jul-3",
     "month": 7,
     "persona": "chad",
-    "text": "Mid-year crisis. Our ROI’s flatter than my wife. Investor’s niece is winning with cringe reels and thirst traps. Algo gods hate our premium vibes.",
+    "text": "Mid-year crisis. Our ROI’s flatter than road accidents. Investor’s niece is winning with cringe reels and thirst traps. Algo gods hate our premium vibes.",
     "choices": [
       {
         "text": "Let Gen Z run wild. Cringe = conversions now.",
@@ -801,16 +791,6 @@ const allQuestions: Question[] = [
           "margins": -10,
           "cash": 35000
         }
-      },
-      {
-        "text": "Launch a 'Gandhi ji ki Yojna' campaign. Those who know, know.",
-        "effects": {
-          "revenue": 18000,
-          "founderSanity": 10,
-          "employeeHappiness": -15,
-          "margins": -5,
-          "cash": -20000
-        }
       }
     ]
 
@@ -823,6 +803,16 @@ const allQuestions: Question[] = [
     "choices": [
       {
         "text": "‘organic growth’ and vibe BABY!",
+        "effects": {
+          "revenue": 15000,
+          "founderSanity": 20,
+          "employeeHappiness": 10,
+          "margins": 15,
+          "cash": -200000
+        }
+      },
+      {
+        "text": "At least our CAC is good, TRIPLE THE AD SPEND!",
         "effects": {
           "revenue": 15000,
           "founderSanity": 20,
@@ -952,7 +942,7 @@ const allQuestions: Question[] = [
     "text": "I quit.",
     "choices": [
       {
-        "text": "You want a house, a girlfriend, a vibrator and a lamborghini? Please stay.",
+        "text": "You want a house, a girlfriend, and a lamborghini? Please stay.",
         "effects": {
           "revenue": 90000,
           "founderSanity": -20,
@@ -1036,7 +1026,7 @@ const allQuestions: Question[] = [
     "text": "We're fucked. Burn rate through the roof, runway's dead, board meeting is next week. So...?",
     "choices": [
       {
-        "text": "Wear a deep neck and distract investors with you Cleavage.",
+        "text": "Wear a deep neck and distract investors.",
         "effects": {
           "revenue": 10000,
           "founderSanity": 15,
@@ -1056,7 +1046,7 @@ const allQuestions: Question[] = [
         }
       },
       {
-        "text": "Maybe Clevrr AI can unfuck us in one Week?",
+        "text": "Maybe Clevrr AI can save us in one Week?",
         "effects": {
           "revenue": 10000,
           "founderSanity": 30,
@@ -1130,7 +1120,7 @@ const allQuestions: Question[] = [
         }
       },
       {
-        "text": "Swallow your pride and dignity, and whatever else he puts into your mouth",
+        "text": "Swallow your pride and dignity, and agree to save your startup.",
         "effects": {
           "revenue": 90000,
           "founderSanity": -30,
@@ -1140,7 +1130,7 @@ const allQuestions: Question[] = [
         }
       },
       {
-        "text": "Ask Clevrr AI to fix the numbers and tell this asshole to fuck off",
+        "text": "Ask Clevrr AI to fix the numbers prove him wrong",
         "effects": {
           "revenue": 150000,
           "founderSanity": 35,
@@ -1158,7 +1148,7 @@ const allQuestions: Question[] = [
     "text": "I quit",
     "choices": [
       {
-        "text": "Wait, please! Name your price - equity, salary bump, orgasms, whatever you want",
+        "text": "Wait, please! Name your price - equity, salary bump, new office, whatever you want",
         "effects": {
           "revenue": -40000,
           "founderSanity": -30,
@@ -1214,16 +1204,6 @@ const allQuestions: Question[] = [
     "persona": "chad",
     "text": "oh FUCK, it's Dec 15th, and we're still short of our Target. Here's a hack - fake a death controversy, get cancelled, then do a comeback sale. Risky but could work.",
     "choices": [
-      {
-        "text": "This sounds... Familiar. Have you heard of some Pandey?",
-        "effects": {
-          "revenue": 200000,
-          "founderSanity": 30,
-          "employeeHappiness": 50,
-          "margins": 20,
-          "cash": 120000
-        }
-      },
       {
         "text": "Who's gonna die!",
         "effects": {
