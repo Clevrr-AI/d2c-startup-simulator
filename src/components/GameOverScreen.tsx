@@ -65,6 +65,8 @@ const GameOverScreen: React.FC = () => {
       };
       console.log(gameData);
       const docRef = await addDoc(collection(db, 'gameResults'), gameData);
+      console.log(gameData);
+      
       console.log('Game data saved with ID:', docRef.id);
     } catch (error) {
       console.error('Error saving game data:', error);

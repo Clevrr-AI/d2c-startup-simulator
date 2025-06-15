@@ -398,7 +398,7 @@ const allQuestions: Question[] = [
     "id": "apr-3",
     "month": 4,
     "persona": "molly",
-    "text": "We have more spreadsheets than Mumbai has potholes. Can we please invest in decent analytics tools? I don't wanna lose my sanity before my virginity.",
+    "text": "We have more spreadsheets than Mumbai has potholes. Can we please invest in decent analytics tools? I don't wanna lose my sanity.",
     "choices": [
       {
         "text": "Fine, give the spreadsheets a funeral.",
@@ -411,7 +411,7 @@ const allQuestions: Question[] = [
         }
       },
       {
-        "text": "Well, I can certainly help you in loosing one of them, hehe.",
+        "text": "Alright, get whatever you want.",
         "effects": {
           "revenue": -25000,
           "founderSanity": -10,
