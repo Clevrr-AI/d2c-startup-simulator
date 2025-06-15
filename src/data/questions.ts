@@ -159,7 +159,7 @@ const allQuestions: Question[] = [
         }
       },
       {
-        "text": "Counter-offer with ₹500 and a blowjob from our intern",
+        "text": "Counter-offer with ₹500 and a free gift from our intern",
         "effects": {
           "revenue": 20000,
           "founderSanity": 20,
@@ -217,7 +217,7 @@ const allQuestions: Question[] = [
       {
         "text": "Focus on our product but also plot their downfall like a Ekta Kapoor serial",
         "effects": {
-          "revenue": 50000,
+          "revenue": 10000,
           "founderSanity": 25,
           "employeeHappiness": 10,
           "margins": 15,
@@ -235,7 +235,7 @@ const allQuestions: Question[] = [
       {
         "text": "Drop a ‘Holi Edition’ at 300% markup. Color = Cash.",
         "effects": {
-          "revenue": 95000,
+          "revenue": 15000,
           "founderSanity": 0,
           "employeeHappiness": 30,
           "margins": 35,
@@ -357,7 +357,7 @@ const allQuestions: Question[] = [
       {
         "text": "Post '10 Things I learnt about Entreprenuership from beggars on the streets' on LinkedIn",
         "effects": {
-          "revenue": 250000,
+          "revenue": 50000,
           "founderSanity": 15,
           "employeeHappiness": 25,
           "margins": -10,
@@ -385,7 +385,7 @@ const allQuestions: Question[] = [
       {
         "text": "Why are you here for? Gimme more money, daddy.",
         "effects": {
-          "revenue": 150000,
+          "revenue": 10000,
           "founderSanity": 15,
           "employeeHappiness": 0,
           "margins": -10,
@@ -683,7 +683,7 @@ const allQuestions: Question[] = [
       {
         "text": "Get Clevrr AI. Let AI fix what your brain broke.",
         "effects": {
-          "revenue": 120000,
+          "revenue": 12000,
           "founderSanity": 40,
           "employeeHappiness": 25,
           "margins": 35,
